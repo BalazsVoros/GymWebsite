@@ -1,0 +1,34 @@
+﻿/* Style for the navigation menu */
+nav {
+    background-color: #333; /* Background color */
+    padding: 10px; /* Padding */
+}
+
+    /* Style for the list */
+    nav ul {
+        list-style-type: none; /* Remove default list style */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style for list items */
+    nav li {
+        display: inline; /* Display items horizontally */
+        margin-right: 20px; /* Margin between items */
+    }
+
+    /* Style for links */
+    nav a {
+        color: #fff; /* Text color */
+        text-decoration: none; /* Remove underline */
+        font-weight: bold; /* Bold text */
+        padding: 5px 10px; /* Padding for each link */
+    }
+
+        /* Hover effect for links */
+        nav a:hover {
+            background-color: #555; /* Background color on hover */
+        }
+
+
+

@@ -5,10 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@RenderTitleSegments(Site.SiteName, "before")</title>
-    <style asp-src="~/GymWeb.Theme/site.css"></style>
-    <link type="image/x-icon" rel="shortcut icon" href="~/TheTheme/images/favicon.ico">
+    @* <link type="image/x-icon" rel="shortcut icon" href="~/TheTheme/images/favicon.ico"> *@
 
-    <!-- This script can't wait till the footer -->
+    <style asp-src="~/GymWebsite.Theme/style.css"></style>
+    <resources Type="Stylesheet"/>
+     <!-- This script can't wait till the footer -->
     <script asp-name="admin-head" version="1" at="Head"></script>
 
     @if (Orchard.IsRightToLeft())
@@ -24,8 +25,8 @@
 
     <script asp-name="bootstrap" version="5" at="Foot"></script>
 
-    <style asp-name="font-awesome" version="6"></style> 
-    <resources type="Header" />
+    <style asp-name="font-awesome" version="6"></style>  
+    <resources type="Header" />  
     @await RenderSectionAsync("HeadMeta", required: false)
 </head>
 <body>
@@ -42,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </nav> *@
+    </nav>*@
     <nav>
         <ul>
             <li><a href="@Url.Content("~/")">Main Page</a></li>
@@ -52,7 +53,7 @@
     @await RenderSectionAsync("Header", required: false)
     <main class="container">
         @await RenderSectionAsync("Messages", required: false)
-       @*  @T["this is my text will it appear from layout cshtml"] *@
+        @*  @T["this is my text will it appear from layout cshtml"] *@
         @await RenderBodyAsync()
     </main>
     @if (IsSectionDefined("Footer"))
