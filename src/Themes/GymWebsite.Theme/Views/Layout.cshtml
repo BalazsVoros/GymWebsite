@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="@Orchard.CultureName()">
-    @* dir="@Orchard.CultureDir()" data-bs-theme="@await ThemeTogglerService.CurrentTheme()" data-tenant="@ThemeTogglerService.CurrentTenant"> *@
+@* dir="@Orchard.CultureDir()" data-bs-theme="@await ThemeTogglerService.CurrentTheme()" data-tenant="@ThemeTogglerService.CurrentTenant"> *@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +8,13 @@
     @* <link type="image/x-icon" rel="shortcut icon" href="~/TheTheme/images/favicon.ico"> *@
 
     <style asp-src="~/GymWebsite.Theme/style.css"></style>
-    <resources Type="Stylesheet"/>
-     <!-- This script can't wait till the footer -->
+    <link href="~/GymWebsite.Theme/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/GymWebsite.Theme/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <resources Type="Stylesheet" />
+    <!-- This script can't wait till the footer -->
     <script asp-name="admin-head" version="1" at="Head"></script>
 
     @if (Orchard.IsRightToLeft())
@@ -25,31 +30,53 @@
 
     <script asp-name="bootstrap" version="5" at="Foot"></script>
 
-    <style asp-name="font-awesome" version="6"></style>  
-    <resources type="Header" />  
+    <style asp-name="font-awesome" version="6"></style>
+    <resources type="Header" />
     @await RenderSectionAsync("HeadMeta", required: false)
 </head>
 <body>
-   @*  <nav class="navbar navbar-expand-md fixed-top">
-        <div class="container">
-             <shape type="Branding" />  this was commented
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <div class="d-flex w-100 align-items-end justify-content-end justify-content-md-between flex-column flex-md-row">
-                    <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
-                      @navbar this was commented
-                </div>
-            </div>
-        </div>
+    @*  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+    <shape type="Branding" />  this was commented
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+    <div class="d-flex w-100 align-items-end justify-content-end justify-content-md-between flex-column flex-md-row">
+    <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
+    @navbar this was commented
+    </div>
+    </div>
+    </div>
     </nav>*@
     <nav>
         <ul>
             <li><a href="@Url.Content("~/")">Main Page</a></li>
             <li><a href="@Url.Content("~/login")">Login Page</a></li>
+            <li><a href="@Url.Content("~/Admin")">Create Exercise</a></li>
         </ul>
     </nav>
+  @*   <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Muscles
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="~/shoulder">shoulders</a>
+            <a class="dropdown-item" href="~/trapesius-traps-csuklya">traps</a>
+            <!-- Add more dropdown items as needed -->
+        </div>
+    </div> *@
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            Muscles
+        </button>
+        <ul class="dropdown-menu">
+           @*  <li><button class="dropdown-item" type="button" href="@Url.Content("~/shoulders")" style="color:aliceblue" onclick="">Shoulders</button></li>
+            <li><button class="dropdown-item" type="button" href="@Url.Content("~/trapesius-traps-csuklya")" style="color:aliceblue">Traps</button></li> *@
+            <li><a class="dropdown-item" href="@Url.Content("~/trapesius-traps-csuklya")" style="color: aliceblue;">Traps</a></li>
+            <li><a class="dropdown-item" href="@Url.Content("~/shoulders")" style="color: aliceblue;">Shoulders</a></li>
+        </ul>
+    </div>
     @await RenderSectionAsync("Header", required: false)
     <main class="container">
         @await RenderSectionAsync("Messages", required: false)

@@ -30,5 +30,39 @@ nav {
             background-color: #555; /* Background color on hover */
         }
 
+/* Style for the dropdown toggle button */
+.dropdown .btn-secondary {
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+    border-color: #007bff; /* Border color */
+}
 
+/* Style for dropdown menu items */
+.dropdown-menu {
+    background-color: #007bff; /* Background color */
+    border: 1px solid #ced4da; /* Border */
+    border-radius: 0.25rem; /* Border radius */
+}
+
+    /* Style for dropdown menu items on hover */
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #f8f9fa; /* Background color on hover */
+    }
+
+    /* Style for dropdown menu item text color */
+    .dropdown-menu .dropdown-item {
+        color: #212529; /* Text color */
+    }
+
+/* Style for dropdown menu item separators */
+.dropdown-divider {
+    margin: 0.5rem 0; /* Margin */
+    border-bottom: 1px solid #ced4da; /* Border */
+}
+
+/* Style for dropdown menu item active state */
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+}
 
