@@ -1,68 +1,89 @@
-﻿/* Style for the navigation menu */
-nav {
-    background-color: #333; /* Background color */
-    padding: 10px; /* Padding */
+﻿/* Top line */
+.top-line {
+    background-color: lawngreen;
+    height: 5px;
+    display: flex;
 }
 
-    /* Style for the list */
-    nav ul {
-        list-style-type: none; /* Remove default list style */
-        margin: 0;
+
+/* Styling of the left menu */
+
+.left-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+    border-right: thick;
+    border-right-color: lawngreen;
+    border-right-style: solid;
+    border-top: thick;
+    border-top-color: lawngreen;
+    border-top-style: solid;
+}
+
+
+    .left-menu ul {
+        list-style-type: none;
         padding: 0;
     }
 
-    /* Style for list items */
-    nav li {
-        display: inline; /* Display items horizontally */
-        margin-right: 20px; /* Margin between items */
+    .left-menu li {
+        margin-bottom: 10px;
     }
 
-    /* Style for links */
-    nav a {
-        color: #fff; /* Text color */
-        text-decoration: none; /* Remove underline */
-        font-weight: bold; /* Bold text */
-        padding: 5px 10px; /* Padding for each link */
+    .left-menu a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
     }
 
-        /* Hover effect for links */
-        nav a:hover {
-            background-color: #555; /* Background color on hover */
+        .left-menu a:hover {
+            background-color: lawngreen;
+            color: #333;
         }
 
-/* Style for the dropdown toggle button */
-.dropdown .btn-secondary {
-    background-color: #007bff; /* Background color */
-    color: #fff; /* Text color */
-    border-color: #007bff; /* Border color */
+/* Styling of the dropdown menu */
+
+.dropdown {
+    position: relative;
 }
 
-/* Style for dropdown menu items */
+
 .dropdown-menu {
-    background-color: #007bff; /* Background color */
-    border: 1px solid #ced4da; /* Border */
-    border-radius: 0.25rem; /* Border radius */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: none;
+    z-index: 1000;
 }
 
-    /* Style for dropdown menu items on hover */
-    .dropdown-menu .dropdown-item:hover {
-        background-color: #f8f9fa; /* Background color on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
     }
 
-    /* Style for dropdown menu item text color */
-    .dropdown-menu .dropdown-item {
-        color: #212529; /* Text color */
+/* Styling for links */
+main a {
+    color: lawngreen;
+    text-decoration: none;
+}
+
+
+    main a:hover {
+        color: darkgreen;
+        text-decoration: underline;
     }
 
-/* Style for dropdown menu item separators */
-.dropdown-divider {
-    margin: 0.5rem 0; /* Margin */
-    border-bottom: 1px solid #ced4da; /* Border */
+/* Styling for menu links */
+.menu a {
+    color: #333;
+    text-decoration: none;
 }
 
-/* Style for dropdown menu item active state */
-.dropdown-item.active, .dropdown-item:active {
-    background-color: #007bff; /* Background color */
-    color: #fff; /* Text color */
-}
 
+    .menu a:hover {
+        color: #333;
+        text-decoration: none;
+    }
