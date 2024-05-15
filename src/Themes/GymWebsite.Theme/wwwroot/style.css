@@ -87,3 +87,18 @@ main a {
         color: #333;
         text-decoration: none;
     }
+
+/* Styling for paragraphs */
+p {
+
+    text-align: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+/* Styling for the image */
+img {
+    float: left;
+    height:auto;
+    width: 160px;
+}
