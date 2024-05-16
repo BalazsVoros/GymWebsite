@@ -32,15 +32,36 @@ namespace GymWebsite.Module.Migrations
               .WithField(nameof(ExercisePart.Description), field => field
                   .OfType(nameof(TextField))
                   .WithDisplayName("Description")
-                  .WithEditor("TextArea")));
+                  .WithEditor("TextArea"))
+              .WithField("Name", field => field
+                  .OfType(nameof(TextField))
+                  .WithDisplayName("Name"))
+              .WithField("Type", field => field
+                  .OfType("TaxonomyField")
+                  .WithDisplayName("Type"))
+              );
 
-            //await _contentDefinitionManager.AlterTypeDefinitionAsync(ExercisePartName, type => type
-            //     .Creatable()
-            //     .Listable()
-            //     .Draftable()
-            // );
+            await _contentDefinitionManager.AlterTypeDefinitionAsync($"{nameof(ExercisePart)}PageFromCode", type => type
+                 .Creatable()
+                 .Listable()
+                 .Draftable()
+                 .WithPart(ExercisePartName)
+             );
 
             return 1;
         }
+
+        //public int UpdateFrom1()
+        //{
+        //     _contentDefinitionManager.AlterPartDefinitionAsync(ExercisePartName, part => part
+        //      .Attachable()
+        //      .WithField(nameof(ExercisePart.Description), field => field
+        //          .OfType(nameof(TextField))
+        //          .WithDisplayName("Description")
+        //          .WithEditor("TextArea")));
+
+        //    return 2;
+        //}
+
     }
 }
