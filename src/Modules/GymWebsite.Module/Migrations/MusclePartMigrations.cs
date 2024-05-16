@@ -41,10 +41,8 @@ namespace GymWebsite.Module.Migrations
               .Draftable()
               .WithPart(MusclePartName )
               .WithPart("AutoRoutePart")
-              .WithPart("ListPart", builder => builder 
-                .WithSetting("ListPartSettings.ContainedContentTypes", $"{nameof(ExercisePart)}PageFromCode")
-                
-            )
+              .WithPart("ListPart")
+              .WithPart("TitlePart")
               );
 
             return 1;

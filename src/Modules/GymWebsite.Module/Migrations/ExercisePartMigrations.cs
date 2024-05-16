@@ -29,13 +29,13 @@ namespace GymWebsite.Module.Migrations
         {
             await _contentDefinitionManager.AlterPartDefinitionAsync(ExercisePartName, part => part
               .Attachable()
+              .WithField("Name", field => field
+                  .OfType(nameof(TextField))
+                  .WithDisplayName("Name"))
               .WithField(nameof(ExercisePart.Description), field => field
                   .OfType(nameof(TextField))
                   .WithDisplayName("Description")
                   .WithEditor("TextArea"))
-              .WithField("Name", field => field
-                  .OfType(nameof(TextField))
-                  .WithDisplayName("Name"))
               .WithField("Type", field => field
                   .OfType("TaxonomyField")
                   .WithDisplayName("Type"))
@@ -46,6 +46,7 @@ namespace GymWebsite.Module.Migrations
                  .Listable()
                  .Draftable()
                  .WithPart(ExercisePartName)
+                 .WithPart("TitlePart")
              );
 
             return 1;
