@@ -1,4 +1,5 @@
 ﻿using OrchardCore.ContentFields.Fields;
+using OrchardCore.ContentManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace GymWebsite.Module.Models
 {
-    public class ExercisePart
+    public class ExercisePart : ContentPart
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
         public TextField Description { get; set; }
         public ExerciseType Type { get; set; }
     }
