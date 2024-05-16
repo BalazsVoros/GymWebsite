@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymWebsite.Module.ViewModels
 {
-    public class MusclePagePartViewModel
+    public class MusclePartViewModel
     {
         [Required]
         public string Name { get; set; }

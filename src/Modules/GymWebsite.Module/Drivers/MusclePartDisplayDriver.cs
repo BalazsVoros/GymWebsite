@@ -12,24 +12,24 @@ using System.Threading.Tasks;
 
 namespace GymWebsite.Module.Drivers
 {
-    public class MusclePagePartDisplayDriver : ContentPartDisplayDriver<MusclePagePart>
+    public class MusclePartDisplayDriver : ContentPartDisplayDriver<MusclePart>
     {
-        public override IDisplayResult Display(MusclePagePart part, BuildPartDisplayContext context) =>
-           Initialize<MusclePagePartViewModel>(
+        public override IDisplayResult Display(MusclePart part, BuildPartDisplayContext context) =>
+           Initialize<MusclePartViewModel>(
                GetDisplayShapeType(context),
                viewModel => PopulateViewModel(part, viewModel))
            .Location("Detail", "Content:5")
            .Location("Summary", "Content:5");
 
-        public override IDisplayResult Edit(MusclePagePart part, BuildPartEditorContext context) =>
-            Initialize<MusclePagePartViewModel>(
+        public override IDisplayResult Edit(MusclePart part, BuildPartEditorContext context) =>
+            Initialize<MusclePartViewModel>(
                 GetEditorShapeType(context),
                 viewModel => PopulateViewModel(part, viewModel))
             .Location("Content:5");
 
-        public override async Task<IDisplayResult> UpdateAsync(MusclePagePart part, IUpdateModel updater, UpdatePartEditorContext context)
+        public override async Task<IDisplayResult> UpdateAsync(MusclePart part, IUpdateModel updater, UpdatePartEditorContext context)
         {
-            var viewModel = new MusclePagePartViewModel();
+            var viewModel = new MusclePartViewModel();
 
             await updater.TryUpdateModelAsync(viewModel, Prefix);
 
@@ -39,7 +39,7 @@ namespace GymWebsite.Module.Drivers
         }
 
 
-        private static void PopulateViewModel(MusclePagePart part, MusclePagePartViewModel viewModel)
+        private static void PopulateViewModel(MusclePart part, MusclePartViewModel viewModel)
         {
             viewModel.Name = part.Name;
         }

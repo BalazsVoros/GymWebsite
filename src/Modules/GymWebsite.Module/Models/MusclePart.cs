@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymWebsite.Module.Models
 {
-    public class MusclePagePart : ContentPart
+    public class MusclePart : ContentPart
     {
         public string Name { get; set; }
     }

@@ -16,10 +16,10 @@ namespace GymWebsite.Module
         public override void ConfigureServices(IServiceCollection services)
         {
             services.AddContentPart<ExercisePart>().UseDisplayDriver<ExercisePartDisplayDriver>();
-            services.AddContentPart<MusclePagePart>().UseDisplayDriver<MusclePagePartDisplayDriver>();
+            services.AddContentPart<MusclePart>().UseDisplayDriver<MusclePartDisplayDriver>();
 
             services.AddScoped<IDataMigration, ExercisePartMigrations>();
-            services.AddScoped<IDataMigration, MusclePagePartMigrations>();
+            services.AddScoped<IDataMigration, MusclePartMigrations>();
 
         }
 
