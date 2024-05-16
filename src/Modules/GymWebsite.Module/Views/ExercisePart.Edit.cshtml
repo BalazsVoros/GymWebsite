@@ -1,0 +1,12 @@
+﻿@model GymWebsite.Module.ViewModels.ExercisePartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="Name">
+    <label asp-for="Name">@T["Name"] <span asp-validation-for="Name"></span></label>
+    <input asp-for="Name" class="form-control" />
+    <span class="hint">@T["Exercise's Name"]</span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="Type">
+    <label asp-for="Type">@T["Type"] <span asp-validation-for="Type"></span></label>
+    <select asp-for="Type" asp-items="Html.GetEnumSelectList<GymWebsite.Module.Models.ExerciseType>()" class="form-control"></select>
+</fieldset>

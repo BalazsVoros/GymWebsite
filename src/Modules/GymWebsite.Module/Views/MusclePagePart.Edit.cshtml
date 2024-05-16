@@ -1,0 +1,7 @@
+﻿@model GymWebsite.Module.ViewModels.MusclePagePartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="Name">
+    <label asp-for="Name">@T["Name"] <span asp-validation-for="Name"></span></label>
+    <input asp-for="Name" class="form-control" />
+    <span class="hint">@T["Muscle Page's Name"]</span>
+</fieldset>
