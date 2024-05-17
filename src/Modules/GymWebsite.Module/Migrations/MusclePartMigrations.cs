@@ -15,7 +15,7 @@ namespace GymWebsite.Module.Migrations
     public class MusclePartMigrations : DataMigration
     {
         private readonly IContentDefinitionManager _contentDefinitionManager;
-        private const string MusclePartName = $"{nameof(MusclePart)}FromCode";
+        //private const string MusclePartName = $"{}";
 
         public MusclePartMigrations(IContentDefinitionManager contentDefinitionManager)
         {
@@ -28,18 +28,17 @@ namespace GymWebsite.Module.Migrations
 
         public async Task<int> CreateAsync()
         {
-            await _contentDefinitionManager.AlterPartDefinitionAsync(MusclePartName, part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync(nameof(MusclePart), part => part
              .Attachable()
-             .WithField("Name", field => field
-                  .OfType("TextField")
-                  .WithDisplayName("Name")
-                  .WithEditor("TextArea")));
+             .WithField("Description", field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Description")));
 
             await _contentDefinitionManager.AlterTypeDefinitionAsync($"{nameof(MusclePart)}PageFromCode", type => type
               .Creatable()
               .Listable()
               .Draftable()
-              .WithPart(MusclePartName )
+              .WithPart(nameof(MusclePart))
               .WithPart("AutoRoutePart")
               .WithPart("ListPart")
               .WithPart("TitlePart")

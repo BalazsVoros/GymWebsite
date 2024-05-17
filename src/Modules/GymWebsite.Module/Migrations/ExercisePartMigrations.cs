@@ -15,7 +15,7 @@ namespace GymWebsite.Module.Migrations
     public class ExercisePartMigrations : DataMigration
     {
         private readonly IContentDefinitionManager _contentDefinitionManager;
-        private const string ExercisePartName = $"{nameof(ExercisePart)}FromCode";
+       // private const string ExercisePartName = $"{)}";
 
         public ExercisePartMigrations(IContentDefinitionManager contentDefinitionManager)
         {
@@ -27,25 +27,25 @@ namespace GymWebsite.Module.Migrations
 
         public async Task<int> CreateAsync()
         {
-            await _contentDefinitionManager.AlterPartDefinitionAsync(ExercisePartName, part => part
+            await _contentDefinitionManager.AlterPartDefinitionAsync(nameof(ExercisePart), part => part
               .Attachable()
-              .WithField("Name", field => field
-                  .OfType(nameof(TextField))
-                  .WithDisplayName("Name"))
-              .WithField(nameof(ExercisePart.Description), field => field
-                  .OfType(nameof(TextField))
-                  .WithDisplayName("Description")
-                  .WithEditor("TextArea"))
-              .WithField("Type", field => field
-                  .OfType("TaxonomyField")
-                  .WithDisplayName("Type"))
+                .WithField("Description", field => field
+                    .OfType(nameof(TextField))
+                    .WithDisplayName("Description"))
+              //  .WithField("Type", field => field
+              //    .OfType("TaxonomyField")
+              //    .WithDisplayName("Type"))
+              //.WithField(nameof(ExercisePart.Description), field => field
+              //    .OfType(nameof(TextField))
+              //    .WithDisplayName("Description")
+              //    .WithEditor("TextArea"))
               );
 
             await _contentDefinitionManager.AlterTypeDefinitionAsync($"{nameof(ExercisePart)}PageFromCode", type => type
                  .Creatable()
                  .Listable()
                  .Draftable()
-                 .WithPart(ExercisePartName)
+                 .WithPart(nameof(ExercisePart))
                  .WithPart("TitlePart")
              );
 
