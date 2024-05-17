@@ -1,6 +1,7 @@
 using GymWebsite.Module.Drivers;
 using GymWebsite.Module.Migrations;
 using GymWebsite.Module.Models;
+using GymWebsite.Module.Permissions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +9,7 @@ using OrchardCore.ContentManagement;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.Data.Migration;
 using OrchardCore.Modules;
+using OrchardCore.Security.Permissions;
 
 namespace GymWebsite.Module
 {
@@ -20,6 +22,8 @@ namespace GymWebsite.Module
 
             services.AddScoped<IDataMigration, ExercisePartMigrations>();
             services.AddScoped<IDataMigration, MusclePartMigrations>();
+
+            services.AddScoped<IPermissionProvider, ExercisePermissions>();
 
         }
 
