@@ -15,7 +15,6 @@ namespace GymWebsite.Module.Migrations
     public class MusclePartMigrations : DataMigration
     {
         private readonly IContentDefinitionManager _contentDefinitionManager;
-        //private const string MusclePartName = $"{}";
 
         public MusclePartMigrations(IContentDefinitionManager contentDefinitionManager)
         {
@@ -46,16 +45,5 @@ namespace GymWebsite.Module.Migrations
 
             return 1;
         }
-
-        //public int UpdateFrom1()
-        //{
-        //     _contentDefinitionManager.AlterTypeDefinitionAsync(MusclePagePartName, type => type
-        //    .Creatable()
-        //    .Listable()
-        //    .Draftable()
-        //    );
-
-        //    return 2;
-        //}
     }
 }
